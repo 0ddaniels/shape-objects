@@ -5,7 +5,7 @@ let Rectangle = {
     width: 10,
 
     perimeter: function(){
-        let p = 2*this.lenght + 2*this.width;
+        let p = 2*this.length + 2*this.width;
         return p;
     },
     
@@ -17,14 +17,14 @@ let Rectangle = {
 
 
 let Square = {
-    sideLenght: 6,
+    sideLength: 6,
 
     perimeter: function(){
-        let p = 4 * this.sideLenght;
+        let p = 4 * this.sideLength;
         return p;
     },
     area: function(){
-        let a = this.sideLenght * this.sideLenght;
+        let a = this.sideLength * this.sideLength;
         return a;
     },
 }
@@ -45,7 +45,7 @@ let Circle = {
 
 //Dont forget about box and sphere
 
-let cube = {
+let Box = {
     length: 5,
     width: 2,
     height: 4,
@@ -54,9 +54,60 @@ let cube = {
         let v = this.length * this.width * this.height;
         return v;
     },
+
+    surfaceArea: function(){
+        let s = (this.length * this.height)*2 + (this.length * this.width)*2 + (this.height * this.width)*2;
+        return s;
+    }
 }
+
+let Sphere = {
+    radius: 5,
+
+    volume: function(){
+        let v = (4/3) * Math.PI * (this.radius * this.radius * this.radius);
+        return v;
+    },
+
+    surfaceArea:function(){
+        let s = 4 * Math.PI * (this.radius * this.radius);
+        return s;
+    }
+}
+
 
 
 
 //------------------------------------------------
 //copy paste test code when you finish under here
+function test(){
+
+    console.log(`------ Rectangle Stuff ------`);
+    console.log(`sides = ${Rectangle.length} by ${Rectangle.width}`);
+    console.log(`perimeter = ${Rectangle.perimeter()}`);
+    console.log(`area = ${Rectangle.area()}\n`);
+    
+    console.log(`------ Square Stuff ------`);
+    console.log(`side length = ${Square.sideLength}`);
+    console.log(`perimeter = ${Square.perimeter()}`);
+    console.log(`area = ${Square.area()}\n`);
+    
+    console.log(`------ Circle Stuff ------`);
+    console.log(`radius = ${Circle.radius}`);
+    console.log(`circumference = ${Circle.circumference()}`);
+    console.log(`area = ${Circle.area()}\n`);
+    
+    console.log(`------ Sphere Stuff ------`);
+    console.log(`radius = ${Sphere.radius}`);
+    console.log(`circumference = ${Sphere.surfaceArea()}`);
+    console.log(`area = ${Sphere.volume()}\n`);
+    
+    console.log(`------ Box Stuff ------`);
+    console.log(`sides = ${Box.length} by ${Box.width} by ${Box.height}`);
+    console.log(`perimeter = ${Box.surfaceArea()}`);
+    console.log(`area = ${Box.volume()}\n`);
+    
+ 
+    }
+    //runs the test
+    test();
